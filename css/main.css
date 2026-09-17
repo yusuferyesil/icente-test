@@ -1,0 +1,198 @@
+    .section-anchor {
+      scroll-margin-top: 80px;
+    }
+
+    .hover-scale {
+      transition: transform 0.3s ease;
+    }
+
+    .hover-scale:hover {
+      transform: scale(1.02);
+    }
+
+    .focus-ring:focus {
+      outline: none;
+    }
+
+    .gallery-slider-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-slider {
+      display: flex;
+      animation: scrollSlider 23s linear infinite;
+    }
+
+    .gallery-slider:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scrollSlider {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .gallery-item {
+      position: relative;
+      flex: 0 0 auto;
+      width: 300px;
+      margin-right: 1rem;
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 204, 0, 0.8);
+      color: #000;
+      text-align: center;
+      font-weight: 500;
+      font-size: 0.875rem;
+      padding: 0.5rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover .gallery-caption {
+      opacity: 1;
+    }
+
+    .glightbox-clean .gdesc {
+      background-color: #fffbea;
+      /* açık sarı arka plan */
+      color: #333;
+      /* okunabilir koyu gri yazı */
+      padding: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      border-radius: 0 0 0.5rem 0.5rem;
+      max-height: 200px;
+      overflow-y: auto;
+      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Başlık kısmını öne çıkarmak için */
+    .glightbox-clean .gtitle {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #c59e00;
+      /* altın sarısı başlık */
+      margin-bottom: 0.5rem;
+    }
+
+    /* Modal genel tasarımı */
+    .glightbox-container {
+      background-color: rgba(0, 0, 0, 0.85);
+      /* biraz daha opak arka plan */
+      z-index: 9999;
+    }
+
+    /* Navigation oklarını özelleştirme (isteğe bağlı) */
+    .glightbox-button {
+      background: rgba(255, 255, 255, 0.7);
+      color: #000;
+      border-radius: 50%;
+      transition: background 0.3s ease;
+    }
+
+    .glightbox-button:hover {
+      background: #ffd700;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(-120%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideOut {
+      from {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      to {
+        transform: translateX(-120%);
+        opacity: 0;
+      }
+    }
+
+    .animate-slide-in {
+      animation: slideIn 0.4s ease-out forwards;
+    }
+
+    .animate-slide-out {
+      animation: slideOut 0.4s ease-in forwards;
+    }
+
+      .fade-enter {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  .fade-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .fade-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fade-exit-active {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+      .tab-active::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid #facc15;
+    }
+
+    .tab-btn {
+      transition: all 0.3s ease;
+    }
+
+    .tab-btn:hover {
+      background-color: #fef9c3;
+    }
+
+    .committee-row:nth-child(even) {
+      background-color: #f9fafb;
+    }
+
+    .committee-row:nth-child(odd) {
+      background-color: #ffffff;
+    }

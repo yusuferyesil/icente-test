@@ -1,0 +1,5 @@
+<FilesMatch "\.(html|htm)$">
+  Header set Cache-Control "no-cache, must-revalidate"
+</FilesMatch>
+
+FileETag All

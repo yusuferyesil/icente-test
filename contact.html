@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICENTE 2026 - Contact</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans pt-16">
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+  <div id="announcement-placeholder"></div>
+
+  <main class="py-10 px-4 max-w-4xl mx-auto space-y-20" data-aos="fade-up">
+    <section>
+      <h1 class="text-4xl font-extrabold text-yellow-600 text-center mb-10 tracking-tight">Contact Us</h1>
+      <p class="text-lg text-gray-600 text-center leading-relaxed mb-6">
+        For questions and inquiries, please contact: <a href="mailto:icente@selcuk.edu.tr" class="text-yellow-600 underline">icente@selcuk.edu.tr</a>
+
+    </section>
+
+    <section class="bg-white p-8 rounded shadow border border-gray-200" data-aos="zoom-in">
+      <h2 class="text-2xl font-semibold text-yellow-600 mb-6">Send Us a Message</h2>
+      <form action="mailto:icente@selcuk.edu.tr" method="POST" enctype="text/plain">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+          <div>
+            <label class="block mb-1 font-medium">Full Name</label>
+            <input type="text" name="Full Name" class="w-full border border-gray-300 rounded px-3 py-2" required>
+          </div>
+          <div>
+            <label class="block mb-1 font-medium">Email</label>
+            <input type="email" name="Email" class="w-full border border-gray-300 rounded px-3 py-2" required>
+          </div>
+        </div>
+        <div class="mb-4">
+          <label class="block mb-1 font-medium">Message</label>
+          <textarea name="Message" rows="5" class="w-full border border-gray-300 rounded px-3 py-2" required></textarea>
+        </div>
+        <button type="submit" class="bg-yellow-600 text-white px-6 py-2 rounded hover:bg-yellow-700 shadow">
+          Send Message
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder" class="mt-16"></div>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,569 @@
+{
+  "honor": [
+    [
+      "Prof. Dr. Hüseyin YILMAZ",
+      "Selcuk University",
+      "Türkiye"
+    ]
+  ],
+  "general": [
+    [
+      "Humar KAHRAMANLI ORNEK",
+      "Selcuk University",
+      "Türkiye"
+    ],
+    [
+      "Fatih BAŞÇİFTÇİ",
+      "Selçuk University",
+      "Türkiye"
+    ]
+  ],
+  "vice": [
+    [
+      "Selahattin ALAN",
+      "Selcuk University",
+      "Türkiye"
+    ],
+    [
+      "Zuleyha YILMAZ ACAR",
+      "Selcuk University",
+      "Türkiye"
+    ]
+  ],
+  "organizing": [
+    [
+      "Angel Smrikarov",
+      "Rousse University",
+      "Bulgaria"
+    ],
+    [
+      "Chaitanya Reddy",
+      "Vizient Inc",
+      "USA"
+    ],
+    [
+      "Fatih Başçiftçi",
+      "Selçuk University",
+      "Türkiye"
+    ],
+    [
+      "Humar Kahramanlı Örnek",
+      "Selçuk University",
+      "Türkiye"
+    ],
+    [
+      "Lilia Georgieva",
+      "Heriot Watt University",
+      "United Kingdom"
+    ],
+    [
+      "Polyxeni Arapi",
+      "Technical University Of Greece",
+      "Greece"
+    ],
+    [
+      "Selahattin Alan",
+      "Selçuk University",
+      "Türkiye"
+    ],
+    [
+      "Silyan Sibinov Arsov",
+      "Rousse University",
+      "Bulgaria"
+    ],
+    [
+      "Züleyha Yılmaz Acar",
+      "Selçuk University",
+      "Türkiye"
+    ]
+  ],
+  "scientific": [
+    [
+      "Abdullah Erdal Tümer",
+      "Necmettin Erbakan University",
+      "Türkiye"
+    ],
+    [
+      "Ahmet Afsin Kulaksız",
+      "Konya Technical University",
+      "Türkiye"
+    ],
+    [
+      "Ahmet Yönetken",
+      "Afyon Kocatepe University",
+      "Türkiye"
+    ],
+    [
+      "Alexander Sudnitson",
+      "Tallinn University Of Technology",
+      "Estonia"
+    ],
+    [
+      "Ali Yaşar",
+      "Selçuk University",
+      "Türkiye"
+    ],
+    [
+      "Alina Ivan Dramogir",
+      "Gheorghe Asachitechnical University Of Iasi",
+      "Romania"
+    ],
+    [
+      "Almoataz Youssef Abdelaziz",
+      "Ain Shams University",
+      "Egypt"
+    ],
+    [
+      "Amar Ramdane Cherif",
+      "University Of Versailles",
+      "France"
+    ],
+    [
+      "Anca Loana Andreescu",
+      "Academy Of Economic Studies",
+      "Bulgaria"
+    ],
+    [
+      "Anne Villems",
+      "University Of Tartu",
+      "Estonia"
+    ],
+    [
+      "Antonella Reitano",
+      "University Of Calabria",
+      "İtaly"
+    ],
+    [
+      "Antonio Mendes",
+      "Universidade De Coimbra",
+      "Portugal"
+    ],
+    [
+      "Anurag Jindal",
+      "Vertisystem",
+      "USA"
+    ],
+    [
+      "Aristomenis Antoniadis",
+      "Technical University Of Crete",
+      "Greece"
+    ],
+    [
+      "Artan Luma",
+      "South East European University",
+      "Macedonia"
+    ],
+    [
+      "Atakan Daşdemir",
+      "KTO Karatay University",
+      "Türkiye"
+    ],
+    [
+      "Baiche Karim",
+      "University of Boumerdes",
+      "Algeria"
+    ],
+    [
+      "Balakrishna Aitha",
+      "Macy's",
+      "USA"
+    ],
+    [
+      "Biagio Lenzitti",
+      "University Of Palermo",
+      "İtaly"
+    ],
+    [
+      "Bikram Pratim Bhuyan",
+      "UPES",
+      "India"
+    ],
+    [
+      "Binod Kumar",
+      "Jspm Jayawant Institute Of Computer Applications Pune",
+      "India"
+    ],
+    [
+      "Boris Akanaev",
+      "Kazak National University",
+      "Kazakhstan"
+    ],
+    [
+      "Diana Kalibatiene",
+      "Vilnius Gediminas Technical University",
+      "Lithuania"
+    ],
+    [
+      "Domenico Tegolo",
+      "Universita Degli Studi Di Palermo",
+      "İtaly"
+    ],
+    [
+      "Eisha Akanksha",
+      "Mvj College Of Engineering",
+      "India"
+    ],
+    [
+      "Elinda Kajo Mece",
+      "Polytechnic University Of Tirana",
+      "Romania"
+    ],
+    [
+      "Engin Ozdemir",
+      "Kocaeli University",
+      "Türkiye"
+    ],
+    [
+      "Fargana Abdullayeva",
+      "Institute of Information Technology Ministry of Science and Education Republic of Azerbaijan",
+      "Azerbaijan"
+    ],
+    [
+      "Fatih Başçiftçi",
+      "Selçuk University",
+      "Türkiye"
+    ],
+    [
+      "Gabriel Luna Sandoval",
+      "Sonora State University",
+      "Mexican"
+    ],
+    [
+      "Gerard Edwards",
+      "Liverpool John Moores University",
+      "England"
+    ],
+    [
+      "Guru Hegde",
+      "Apple",
+      "USA"
+    ],
+    [
+      "Hamit Saruhan",
+      "Duzce University",
+      "Türkiye"
+    ],
+    [
+      "Hamza Bensouilah",
+      "Laboratoire de Mecanique et Structures",
+      "Algeria"
+    ],
+    [
+      "Howard Duncan",
+      "Dublin City University",
+      "Ireland"
+    ],
+    [
+      "Humar Kahramanlı Örnek",
+      "Selçuk University",
+      "Türkiye"
+    ],
+    [
+      "Huse Fatkic",
+      "University Of Sarajevo",
+      "Bosnia and Herzegovina"
+    ],
+    [
+      "Ivan Jelinek",
+      "Czech Technical University",
+      "Czech Republic"
+    ],
+    [
+      "İlker Ali Özkan",
+      "Selçuk University",
+      "Türkiye"
+    ],
+    [
+      "İsmail Sarıtaş",
+      "Selçuk University",
+      "Türkiye"
+    ],
+    [
+      "Jaharah A Ghani",
+      "National University of Malaysia",
+      "Malaysia"
+    ],
+    [
+      "Jan Vom Brocke",
+      "University Of Liechtenstein",
+      "Liechtenstein"
+    ],
+    [
+      "Janis Grundspenkis",
+      "Riga Technical University",
+      "Latvia"
+    ],
+    [
+      "Janusz Jablonowski",
+      "Warsaw University",
+      "Polond"
+    ],
+    [
+      "Jiri Srba",
+      "Aalborg University",
+      "Denmark"
+    ],
+    [
+      "Karl Jones",
+      "Liverpool John Moores University",
+      "United Kingdom"
+    ],
+    [
+      "Laurentiu Cristian Deaconu",
+      "University Of Pitesti",
+      "Romania"
+    ],
+    [
+      "Mahdi Shahbakhti",
+      "Michigan Technology University",
+      "USA"
+    ],
+    [
+      "Majida Ali Abed Meshari",
+      "Tikrit University",
+      "Iraq"
+    ],
+    [
+      "Marco Porta",
+      "University Of Pavia",
+      "İtaly"
+    ],
+    [
+      "Mehmet Turan Demirci",
+      "Selcuk University",
+      "Türkiye"
+    ],
+    [
+      "Mirjana Ivanovic",
+      "University Of Novi Sad",
+      "Serbia"
+    ],
+    [
+      "Miroslav Neslusan",
+      "University of Zilina",
+      "Slovakia"
+    ],
+    [
+      "Murat Hacımurtazaoğlu",
+      "Recep Tayyip Erdoğan Üniversitesi",
+      "Türkiye"
+    ],
+    [
+      "Mustafa Acarer",
+      "Selçuk University",
+      "Türkiye"
+    ],
+    [
+      "Mustafa Acaroğlu",
+      "Selçuk University",
+      "Türkiye"
+    ],
+    [
+      "Mustafa Altin",
+      "Konya Technical University",
+      "Türkiye"
+    ],
+    [
+      "Natasa Hoic Bozic",
+      "Universityof Rijeka",
+      "Croatia"
+    ],
+    [
+      "Navom Saxena",
+      "Meta",
+      "USA"
+    ],
+    [
+      "Nihat Yildirim",
+      "Gaziantep University",
+      "Türkiye"
+    ],
+    [
+      "Nikolaos Blasis",
+      "Technical University Of Crete",
+      "Greece"
+    ],
+    [
+      "Pantha Ghosal",
+      "University Of Technology Sydney",
+      "Australia"
+    ],
+    [
+      "Pino Caballero Gil",
+      "University Of La Laguna",
+      "Spain"
+    ],
+    [
+      "Polyxeni Arapi",
+      "Technical University Of Greece",
+      "Greece"
+    ],
+    [
+      "Radoslav Yoshinov",
+      "Bulgarian Academy of Sciences",
+      "Bulgaria"
+    ],
+    [
+      "Raja Chakraborty",
+      "Ticketmaster",
+      "USA"
+    ],
+    [
+      "Rajaganapathi Rangdale Srinivasa Rao",
+      "Illumina",
+      "USA"
+    ],
+    [
+      "Rakesh Charla",
+      "Microsoft",
+      "USA"
+    ],
+    [
+      "Ramesh Somayajula",
+      "T-Mobile US Inc",
+      "USA"
+    ],
+    [
+      "Recai Kuş",
+      "Selçuk University",
+      "Türkiye"
+    ],
+    [
+      "Rita Ismailova",
+      "Kyrgyz Turkish Manas University",
+      "Kyrgyzstan"
+    ],
+    [
+      "Sebastian Chandler-Crnigoj",
+      "Liverpool John Moores University",
+      "England"
+    ],
+    [
+      "Semet Celik",
+      "Ataturk University",
+      "Türkiye"
+    ],
+    [
+      "Shafagat Mahmudova",
+      "Institute of Information Technology",
+      "Azerbaijan"
+    ],
+    [
+      "Silyan Sibinov Arsov",
+      "Rousse University",
+      "Bulgaria"
+    ],
+    [
+      "Spiridon Cretu",
+      "Gheorghe Asachitechnical University Of Iasi",
+      "Romania"
+    ],
+    [
+      "Srinivas Mudireddy",
+      "Amazon",
+      "USA"
+    ],
+    [
+      "Stavros Christodoulakis",
+      "Technical University Of Crete",
+      "Greece"
+    ],
+    [
+      "Stavros Nikolopoulos",
+      "University Of Ioannina",
+      "Greece"
+    ],
+    [
+      "Suleyman Neşeli",
+      "Selçuk University",
+      "Türkiye"
+    ],
+    [
+      "Surya Karri",
+      "Pinterest",
+      "USA"
+    ],
+    [
+      "Tatjana Dulinskiene",
+      "Kaunas University Of Technology",
+      "Lithuania"
+    ],
+    [
+      "Tayfun Findik",
+      "Gazi University",
+      "Türkiye"
+    ],
+    [
+      "Temel Kayikcioglu",
+      "Karadeniz Technical University",
+      "Türkiye"
+    ],
+    [
+      "Thomas Engel",
+      "University Of Luxembourg",
+      "Luxembourg"
+    ],
+    [
+      "Tuba Gökhan",
+      "Mohamed bin Zayed University of Artificial Intelligence",
+      "United Arab Emirates"
+    ],
+    [
+      "Tugce Demirdelen",
+      "Adana Science Technology University",
+      "Türkiye"
+    ],
+    [
+      "Tzvetomir Vassilev",
+      "University of Ruse",
+      "Bulgaria"
+    ],
+    [
+      "Ulku Sultan Keskin",
+      "Konya Technical University",
+      "Türkiye"
+    ],
+    [
+      "Ulvi Seker",
+      "Gazi University",
+      "Türkiye"
+    ],
+    [
+      "Venkat Poosapati",
+      "Meta",
+      "USA"
+    ],
+    [
+      "Yang Yang",
+      "Meta",
+      "USA"
+    ]
+  ],
+  "local": [
+    [
+      "Burak TEZCAN",
+      "Selçuk University",
+      "Türkiye"
+    ],
+    [
+      "Gülnihal UYKUN",
+      "Selçuk University",
+      "Türkiye"
+    ],
+    [
+      "İlkay ÇINAR",
+      "Selçuk University",
+      "Türkiye"
+    ],
+    [
+      "Musa DOGAN",
+      "Selcuk University",
+      "Türkiye"
+    ],
+    [
+      "Yusuf ERYESİL",
+      "Selçuk University",
+      "Türkiye"
+    ]
+  ]
+}

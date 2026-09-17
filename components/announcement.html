@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<button id="announcement-icon"
+        class="fixed top-24 left-0 z-40 pl-4 pr-4 py-3 rounded-r-full bg-white shadow-lg hover:bg-gray-100">
+  <i class="fa-solid fa-bullhorn text-yellow-600"></i>
+</button>
+
+<div id="announcement-panel"
+     class="fixed top-24 left-0 z-40 w-96 p-5 bg-gray-100 text-gray-800 rounded-r-lg shadow-xl border border-gray-300 hidden">
+  <h3 class="text-lg font-bold mb-4 flex items-center">
+    <i class="fa-solid fa-bullhorn text-yellow-600 mr-2"></i> Announcements
+  </h3>
+
+  <div class="space-y-3">
+
+    <!-- 1 — Conference Program -->
+    <div class="flex items-start space-x-3 p-4 bg-white rounded hover:bg-yellow-100 transition-colors">
+      <i class="fa-solid fa-calendar-days text-2xl mt-1 text-yellow-600"></i>
+      <div>
+        <p class="text-sm font-semibold text-gray-900 mb-1">
+          Conference Program
+        </p>
+        <p class="text-xs text-gray-700 leading-relaxed">
+          The <strong>ICENTE 2026</strong> conference program will be announced soon. Please check back later for the full schedule of sessions and presentations.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2 — Keynote Speakers -->
+    <div class="flex items-start space-x-3 p-4 bg-white rounded hover:bg-yellow-100 transition-colors">
+      <i class="fa-solid fa-microphone-lines text-2xl mt-1 text-yellow-600"></i>
+      <div>
+        <p class="text-sm font-semibold text-gray-900 mb-1">
+          Keynote Speakers
+        </p>
+        <p class="text-xs text-gray-700 leading-relaxed">
+          The <strong>keynote speakers</strong> for ICENTE 2026 will be announced soon. Stay tuned for updates on our distinguished invited speakers.
+        </p>
+      </div>
+    </div>
+
+    <!-- 3 — Call for Papers Open -->
+    <div class="flex items-start space-x-3 p-4 bg-white rounded hover:bg-yellow-100 transition-colors">
+      <i class="fa-solid fa-file-pen text-2xl mt-1 text-yellow-600"></i>
+      <div>
+        <p class="text-sm font-semibold text-gray-900 mb-1">
+          Call for Papers is Open
+        </p>
+        <p class="text-xs text-gray-700 leading-relaxed">
+          Submissions for <strong>ICENTE 2026</strong> are now being accepted. Submit your abstract or full paper through the CMT system before the deadline.
+          <br><br>
+          <a href="cfp.html" class="text-yellow-700 underline font-medium">
+            View submission details →
+          </a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const icon = document.getElementById("announcement-icon");
+  const panel = document.getElementById("announcement-panel");
+
+  icon.addEventListener("click", () => {
+    panel.classList.toggle("hidden");
+  });
+</script>

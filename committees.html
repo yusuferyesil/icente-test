@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICENTE 2026 - Committees</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    .tab-btn {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .tab-btn.tab-active::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid #facc15; /* Tailwind yellow-400 */
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans pt-16 flex flex-col min-h-screen">
+
+  <div class="flex-grow">
+    <div id="header-placeholder"></div>
+    <div id="announcement-placeholder"></div>
+
+    <div class="max-w-6xl mx-auto px-4 py-8">
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-yellow-600 text-center mb-12" data-aos="fade-down">ICENTE 2026 Committees</h1>
+
+      <!-- Tabs -->
+      <div class="flex flex-wrap justify-center gap-2 border-b border-gray-200 pb-2 mb-8" data-aos="fade-up">
+        <button class="tab-btn tab-active px-4 py-2 bg-white text-sm font-semibold text-gray-900 rounded-md shadow transition" data-target="honor">Honor Board</button>
+        <button class="tab-btn px-4 py-2 bg-white text-sm font-semibold text-gray-800 rounded-md shadow transition" data-target="general">General Chairs</button>
+        <button class="tab-btn px-4 py-2 bg-white text-sm font-semibold text-gray-800 rounded-md shadow transition" data-target="vice">Vice Chairs</button>
+        <button class="tab-btn px-4 py-2 bg-white text-sm font-semibold text-gray-800 rounded-md shadow transition" data-target="organizing">Organizing Committee</button>
+        <button class="tab-btn px-4 py-2 bg-white text-sm font-semibold text-gray-800 rounded-md shadow transition" data-target="scientific">Scientific Committee</button>
+        <button class="tab-btn px-4 py-2 bg-white text-sm font-semibold text-gray-800 rounded-md shadow transition" data-target="local">Local Organizing Committee</button>
+      </div>
+
+      <!-- Tab Contents -->
+      <div class="bg-white rounded-lg shadow p-6 min-h-[150px] relative transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+        <div id="committee-container" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700 text-sm sm:text-base"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder" class="mt-16"></div>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    AOS.init();
+
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const committeeContainer = document.getElementById('committee-container');
+    let committeeData = {};
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        tabButtons.forEach(btn => btn.classList.remove('tab-active', 'text-gray-900'));
+        button.classList.add('tab-active', 'text-gray-900');
+
+        const target = button.getAttribute('data-target');
+        renderCommittee(target);
+      });
+    });
+
+    function renderCommittee(boardKey) {
+      committeeContainer.innerHTML = '';
+      const data = committeeData[boardKey] || [];
+
+      data.forEach((member, index) => {
+        const card = document.createElement('div');
+        card.className = `bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-200`;
+        card.setAttribute('data-aos', 'fade-up');
+        card.setAttribute('data-aos-delay', index * 100);
+
+        const name = document.createElement('div');
+        name.className = 'font-semibold text-gray-800';
+        name.textContent = member[0] || '';
+
+        const title = document.createElement('div');
+        title.className = 'text-sm text-gray-600';
+        title.textContent = member[1] || '';
+
+        const affiliation = document.createElement('div');
+        affiliation.className = 'text-sm text-gray-500 italic';
+        affiliation.textContent = member[2] || '';
+
+        card.appendChild(name);
+        card.appendChild(title);
+        card.appendChild(affiliation);
+
+        committeeContainer.appendChild(card);
+      });
+    }
+
+    fetch('assets/datas/committees.json')
+      .then(response => response.json())
+      .then(data => {
+        committeeData = data;
+        renderCommittee('honor');
+      })
+      .catch(error => {
+        committeeContainer.innerHTML = `<div class="text-red-600">Error loading data.</div>`;
+        console.error('Failed to load committees.json:', error);
+      });
+  </script>
+</body>
+
+</html>
