@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initAnnouncementPanel();
   });
   // Geri sayımı başlat
-  startCountdown("October 30, 2025 09:00:00");
+  startCountdown("November 27, 2026 09:00:00");
 
   // AOS başlat
   AOS.init({
@@ -33,25 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-  const cfpButton = document.getElementById('cfpDropdownButton');
-  const cfpMenu = document.getElementById('cfpDropdownMenu');
 
-  if (cfpButton && cfpMenu) {
-    cfpButton.addEventListener('click', function (event) {
-      event.stopPropagation();
-      cfpMenu.classList.toggle('hidden');
-    });
-
-    document.addEventListener('click', function () {
-      cfpMenu.classList.add('hidden');
-    });
-
-    cfpMenu.addEventListener('click', function (event) {
-      event.stopPropagation();
-    });
-  }
-});
 
 
 // Navbar ve mobil menü event'lerini tanımlayan fonksiyon
@@ -161,8 +143,12 @@ function startCountdown(targetDateStr) {
     const now = new Date().getTime();
     const diff = target - now;
 
+    const countdownEl = document.getElementById("countdown");
+
     if (diff <= 0) {
-      document.getElementById("countdown").innerHTML = "<p class='text-xl text-red-600'>The conference has started!</p>";
+      if (countdownEl) {
+        countdownEl.innerHTML = "<p class='text-xl text-red-600'>The conference has started!</p>";
+      }
       clearInterval(timer);
       return;
     }
@@ -172,10 +158,15 @@ function startCountdown(targetDateStr) {
     const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const s = Math.floor((diff % (1000 * 60)) / 1000);
 
-    document.getElementById("days").textContent = d.toString().padStart(2, "0");
-    document.getElementById("hours").textContent = h.toString().padStart(2, "0");
-    document.getElementById("minutes").textContent = m.toString().padStart(2, "0");
-    document.getElementById("seconds").textContent = s.toString().padStart(2, "0");
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+
+    if (daysEl) daysEl.textContent = d.toString().padStart(2, "0");
+    if (hoursEl) hoursEl.textContent = h.toString().padStart(2, "0");
+    if (minutesEl) minutesEl.textContent = m.toString().padStart(2, "0");
+    if (secondsEl) secondsEl.textContent = s.toString().padStart(2, "0");
   };
 
   update(); // Sayfa yüklenince hemen göster
@@ -185,6 +176,7 @@ function startCountdown(targetDateStr) {
 function initAnnouncementPanel() {
   const panel = document.getElementById('announcement-panel');
   const icon = document.getElementById('announcement-icon');
+  const closeBtn = document.getElementById('announcement-close');
 
   let isOpen = true;
   let autoCloseTimeout;
@@ -216,6 +208,8 @@ function initAnnouncementPanel() {
   }
 
   icon.addEventListener('click', openPanel);
+  if (closeBtn) closeBtn.addEventListener('click', closePanel);
+
 
   // SADECE İLK YÜKLEMEDE PANEL GÖRÜNSÜN
   const hasSeenAnnouncement = sessionStorage.getItem('announcementSeen');

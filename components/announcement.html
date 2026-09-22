@@ -7,8 +7,9 @@
 
 <div id="announcement-panel"
      class="fixed top-24 left-0 z-40 w-96 p-5 bg-gray-100 text-gray-800 rounded-r-lg shadow-xl border border-gray-300 hidden">
-  <h3 class="text-lg font-bold mb-4 flex items-center">
-    <i class="fa-solid fa-bullhorn text-yellow-600 mr-2"></i> Announcements
+  <h3 class="text-lg font-bold mb-4 flex items-center justify-between">
+    <span><i class="fa-solid fa-bullhorn text-yellow-600 mr-2"></i> Announcements</span>
+    <button id="announcement-close" class="text-gray-500 hover:text-red-600 text-xl leading-none">&times;</button>
   </h3>
 
   <div class="space-y-3">
@@ -22,6 +23,10 @@
         </p>
         <p class="text-xs text-gray-700 leading-relaxed">
           The <strong>ICENTE 2026</strong> conference program will be announced soon. Please check back later for the full schedule of sessions and presentations.
+          <br><br>
+          <a href="program.html" class="text-yellow-700 underline font-medium">
+            View program →
+          </a>
         </p>
       </div>
     </div>
@@ -35,6 +40,10 @@
         </p>
         <p class="text-xs text-gray-700 leading-relaxed">
           The <strong>keynote speakers</strong> for ICENTE 2026 will be announced soon. Stay tuned for updates on our distinguished invited speakers.
+          <br><br>
+          <a href="speakers.html" class="text-yellow-700 underline font-medium">
+            View speakers →
+          </a>
         </p>
       </div>
     </div>
@@ -58,12 +67,3 @@
 
   </div>
 </div>
-
-<script>
-  const icon = document.getElementById("announcement-icon");
-  const panel = document.getElementById("announcement-panel");
-
-  icon.addEventListener("click", () => {
-    panel.classList.toggle("hidden");
-  });
-</script>

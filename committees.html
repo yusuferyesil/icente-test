@@ -8,46 +8,36 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
   <link rel="stylesheet" href="css/main.css" />
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <style>
-    .tab-btn {
-      position: relative;
-      transition: all 0.3s ease;
-    }
-    .tab-btn.tab-active::after {
-      content: "";
-      position: absolute;
-      bottom: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-top: 8px solid #facc15; /* Tailwind yellow-400 */
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body class="bg-gray-100 text-gray-800 font-sans pt-16 flex flex-col min-h-screen">
+<body class="bg-gray-50 text-gray-800 font-sans pt-16 flex flex-col min-h-screen">
 
   <div class="flex-grow">
     <div id="header-placeholder"></div>
     <div id="announcement-placeholder"></div>
 
-    <div class="max-w-6xl mx-auto px-4 py-8">
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-yellow-600 text-center mb-12" data-aos="fade-down">ICENTE 2026 Committees</h1>
+    <div class="max-w-6xl mx-auto px-4 py-12">
+      <div class="text-center mb-12" data-aos="fade-down">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-yellow-600 mb-4 tracking-tight">ICENTE 2026 Committees</h1>
+        <p class="text-gray-600 text-lg max-w-2xl mx-auto">Meet the distinguished experts, researchers, and professionals who make this conference possible.</p>
+      </div>
 
       <!-- Tabs -->
-      <div class="flex flex-wrap justify-center gap-2 border-b border-gray-200 pb-2 mb-8" data-aos="fade-up">
-        <button class="tab-btn tab-active px-4 py-2 bg-white text-sm font-semibold text-gray-900 rounded-md shadow transition" data-target="honor">Honor Board</button>
-        <button class="tab-btn px-4 py-2 bg-white text-sm font-semibold text-gray-800 rounded-md shadow transition" data-target="general">General Chairs</button>
-        <button class="tab-btn px-4 py-2 bg-white text-sm font-semibold text-gray-800 rounded-md shadow transition" data-target="vice">Vice Chairs</button>
-        <button class="tab-btn px-4 py-2 bg-white text-sm font-semibold text-gray-800 rounded-md shadow transition" data-target="organizing">Organizing Committee</button>
-        <button class="tab-btn px-4 py-2 bg-white text-sm font-semibold text-gray-800 rounded-md shadow transition" data-target="scientific">Scientific Committee</button>
-        <button class="tab-btn px-4 py-2 bg-white text-sm font-semibold text-gray-800 rounded-md shadow transition" data-target="local">Local Organizing Committee</button>
+      <div class="flex flex-wrap justify-center gap-3 mb-12 relative z-10" data-aos="fade-up">
+        <button class="tab-btn tab-active px-5 py-2.5 bg-yellow-50 text-sm font-bold text-yellow-800 border border-yellow-400 shadow-sm relative focus:outline-none" data-target="honor">Honor Board</button>
+        <button class="tab-btn px-5 py-2.5 bg-white text-sm font-semibold text-gray-700 border border-gray-200 shadow-sm relative focus:outline-none" data-target="general">General Chairs</button>
+        <button class="tab-btn px-5 py-2.5 bg-white text-sm font-semibold text-gray-700 border border-gray-200 shadow-sm relative focus:outline-none" data-target="vice">Vice Chairs</button>
+        <button class="tab-btn px-5 py-2.5 bg-white text-sm font-semibold text-gray-700 border border-gray-200 shadow-sm relative focus:outline-none" data-target="organizing">Organizing Committee</button>
+        <button class="tab-btn px-5 py-2.5 bg-white text-sm font-semibold text-gray-700 border border-gray-200 shadow-sm relative focus:outline-none" data-target="scientific">Scientific Committee</button>
+        <button class="tab-btn px-5 py-2.5 bg-white text-sm font-semibold text-gray-700 border border-gray-200 shadow-sm relative focus:outline-none" data-target="local">Local Committee</button>
       </div>
 
       <!-- Tab Contents -->
-      <div class="bg-white rounded-lg shadow p-6 min-h-[150px] relative transition-all duration-300 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-        <div id="committee-container" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700 text-sm sm:text-base"></div>
+      <div class="min-h-[300px] relative transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+        <div id="committee-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Cards injected via JS -->
+        </div>
       </div>
     </div>
   </div>
@@ -58,16 +48,51 @@
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="js/main.js"></script>
   <script>
-    AOS.init();
+    AOS.init({ duration: 800, once: true });
 
     const tabButtons = document.querySelectorAll('.tab-btn');
     const committeeContainer = document.getElementById('committee-container');
     let committeeData = {};
 
+    // Generate avatar initials
+    function getInitials(name) {
+      // Remove common titles to get true name initials
+      const cleanName = name.replace(/(Prof\.\sDr\.|Prof\.|Dr\.|Res\.\sAsst\.|Asst\.)/gi, '').trim();
+      const parts = cleanName.split(' ').filter(p => p.length > 0);
+      if (parts.length >= 2) {
+        return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+      } else if (parts.length === 1) {
+        return parts[0].substring(0, 2).toUpperCase();
+      }
+      return 'IC';
+    }
+
+    // Use a standard uniform color for all avatars
+    function getColorForInitial(initials) {
+      return 'bg-yellow-50 text-yellow-700 border-yellow-200';
+    }
+
+    // Format ALL CAPS names nicely
+    function toTitleCase(str) {
+      return str.replace(
+        /\w\S*/g,
+        function(txt) {
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        }
+      );
+    }
+
     tabButtons.forEach(button => {
       button.addEventListener('click', () => {
-        tabButtons.forEach(btn => btn.classList.remove('tab-active', 'text-gray-900'));
-        button.classList.add('tab-active', 'text-gray-900');
+        // Reset all tabs
+        tabButtons.forEach(btn => {
+          btn.classList.remove('tab-active', 'bg-yellow-50', 'border-yellow-400', 'text-yellow-800', 'font-bold');
+          btn.classList.add('bg-white', 'text-gray-700', 'border-gray-200', 'font-semibold');
+        });
+        
+        // Set active tab
+        button.classList.remove('bg-white', 'text-gray-700', 'border-gray-200', 'font-semibold');
+        button.classList.add('tab-active', 'bg-yellow-50', 'border-yellow-400', 'text-yellow-800', 'font-bold');
 
         const target = button.getAttribute('data-target');
         renderCommittee(target);
@@ -78,29 +103,57 @@
       committeeContainer.innerHTML = '';
       const data = committeeData[boardKey] || [];
 
+      if (data.length === 0) {
+        committeeContainer.innerHTML = `
+          <div class="col-span-full text-center text-gray-500 py-16 bg-white rounded-2xl border border-gray-200 shadow-sm">
+            <i class="fa-solid fa-users-slash text-4xl mb-3 text-gray-300"></i>
+            <p>Members for this committee will be announced soon.</p>
+          </div>
+        `;
+        return;
+      }
+
       data.forEach((member, index) => {
-        const card = document.createElement('div');
-        card.className = `bg-gray-50 p-4 rounded-lg shadow-sm border border-gray-200`;
-        card.setAttribute('data-aos', 'fade-up');
-        card.setAttribute('data-aos-delay', index * 100);
+        let name = member[0] || '';
+        const institution = member[1] || '';
+        const country = member[2] || '';
+        
+        // Check if name is all caps and fix it
+        if (name === name.toUpperCase() && name.length > 5) {
+          name = toTitleCase(name);
+        }
 
-        const name = document.createElement('div');
-        name.className = 'font-semibold text-gray-800';
-        name.textContent = member[0] || '';
+        const initials = getInitials(name);
+        const colorClass = getColorForInitial(initials);
 
-        const title = document.createElement('div');
-        title.className = 'text-sm text-gray-600';
-        title.textContent = member[1] || '';
+        const cardHTML = `
+          <div class="card hover-scale p-5 bg-white border border-gray-100 rounded-2xl flex flex-col justify-between h-full" 
+               data-aos="fade-up">
+            
+            <div class="flex items-start gap-4 mb-4">
+              <div class="flex-shrink-0 w-14 h-14 ${colorClass} rounded-full flex items-center justify-center font-bold text-xl border-2 shadow-sm">
+                ${initials}
+              </div>
+              
+              <div class="flex-grow min-w-0 pt-1">
+                <h3 class="text-gray-900 font-bold text-base leading-tight mb-1 truncate" title="${name}">${name}</h3>
+                <p class="text-xs font-semibold text-yellow-700 flex items-center gap-1.5 truncate" title="${institution}">
+                  <i class="fa-solid fa-building text-yellow-500/80"></i>
+                  ${institution}
+                </p>
+              </div>
+            </div>
+            
+            <div class="pt-3 border-t border-gray-100 flex items-center justify-end">
+              <span class="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-bold uppercase tracking-wider bg-gray-50 text-gray-500 border border-gray-200 shadow-sm">
+                <i class="fa-solid fa-location-dot mr-1.5 text-gray-400"></i>
+                ${country}
+              </span>
+            </div>
+          </div>
+        `;
 
-        const affiliation = document.createElement('div');
-        affiliation.className = 'text-sm text-gray-500 italic';
-        affiliation.textContent = member[2] || '';
-
-        card.appendChild(name);
-        card.appendChild(title);
-        card.appendChild(affiliation);
-
-        committeeContainer.appendChild(card);
+        committeeContainer.insertAdjacentHTML('beforeend', cardHTML);
       });
     }
 
@@ -111,7 +164,12 @@
         renderCommittee('honor');
       })
       .catch(error => {
-        committeeContainer.innerHTML = `<div class="text-red-600">Error loading data.</div>`;
+        committeeContainer.innerHTML = `
+          <div class="col-span-full text-center text-red-500 py-12 bg-white rounded-xl border border-red-200">
+            <i class="fa-solid fa-circle-exclamation text-3xl mb-2"></i>
+            <p>Failed to load committee members. Please try again later.</p>
+          </div>
+        `;
         console.error('Failed to load committees.json:', error);
       });
   </script>
